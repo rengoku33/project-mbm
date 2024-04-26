@@ -1,0 +1,44 @@
+import React from "react";
+
+const ReviewComponent = () => {
+  return (
+    <div className="flex justify-center space-x-8">
+      {[...Array(3)].map((_, index) => (
+        <div key={index} className="flex flex-col items-center">
+          <div className="w-48 h-48 bg-gradient-to-br from-blue-400 to-purple-600 rounded-lg shadow-md p-4">
+            {/* Stars */}
+            <div className="flex justify-center space-x-1 mb-2">
+              {[...Array(5)].map((_, starIndex) => (
+                <svg
+                  key={starIndex}
+                  className="w-6 h-6 text-yellow-400"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10 .224l2.06 6.317h6.654a.68.68 0 01.646.448.697.697 0 01-.18.753l-5.39 3.907 2.06 6.317a.683.683 0 01-.258.74.697.697 0 01-.753-.018L10 15.76l-5.878 4.492a.697.697 0 01-.753.018.683.683 0 01-.258-.74l2.06-6.317-5.39-3.907a.697.697 0 01-.18-.753.68.68 0 01.646-.448h6.654L10 .224z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              ))}
+            </div>
+            {/* Description */}
+            <p className="text-white text-center mb-2">
+              This is a fantastic product. I highly recommend it!
+            </p>
+            {/* Circle with photo and name */}
+            <div className="flex items-center justify-center">
+              <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center mr-2">
+                <span className="text-gray-600 font-bold">JD</span>
+              </div>
+              <span className="text-gray-300">John Doe</span>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default ReviewComponent;
